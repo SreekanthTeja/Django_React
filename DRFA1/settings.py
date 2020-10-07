@@ -28,13 +28,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'rest_framework',
-    'rest_framework.authtoken', # new!
+    'rest_framework.authtoken', 
     'rest_auth',
     'allauth',
     'allauth.account',
     'rest_auth.registration',
     'corsheaders',
-    'posts'
+    #own apps
+    'accounts',
+    'posts',
+
 ]
 SITE_ID = 1
 
@@ -73,8 +76,9 @@ WSGI_APPLICATION = 'DRFA1.wsgi.application'
 CORS_ALLOWED_ORIGINS = [
     "https://example.com",
     "https://sub.example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
     "http://localhost:3000",
-    "http://127.0.0.1:8000"
 ]
 
 
@@ -130,10 +134,14 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.AllowAny',
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication', # new
+    ],
 }
-
 
 CORS_ORIGIN_ALLOW_ALL = True
 

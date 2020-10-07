@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+// import { Form, Input, Button } from "antd";
+// const FormItem = Form.Item;
 class CustomForm extends React.Component{
     constructor(props){
         super(props)
@@ -35,16 +37,21 @@ class CustomForm extends React.Component{
                 
         }
     }
+    
+
+    
 
     render(){
         const {title,content}=this.state
         return(
             <div>
+                
                 <form onSubmit={(event) => this.handleSubmit(event,
                     this.props.requestType,
                     this.props.articleID)}>
                     <div>
                         <label>Title:</label>
+
                         <input type="text" name="title" value={title} onChange={this.changeHandler}/>
                     </div>
                     <div>
@@ -56,9 +63,13 @@ class CustomForm extends React.Component{
                     </div>
                 </form>
 
+
+
             </div>
-                    
-                    
+
+
+                
+                
 
 
         );

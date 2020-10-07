@@ -10,14 +10,15 @@ class ArticleList extends React.Component{
     };
     componentDidMount(){
 
-        axios.get('http://127.0.0.1:9000/api/')
-            .then(res => {
-                this.setState({
-                    posts: res.data
-                });
-                
+        axios.get(`http://127.0.0.1:9000/api/`)
+        .then(res => {
+            this.setState({
+                posts: res.data
+            });
+            console.log(res.data);
+            
 
-            })  
+        })  
     }
     render() {
         return(

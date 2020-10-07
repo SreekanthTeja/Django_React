@@ -16,7 +16,7 @@ class ArticleDetail extends React.Component {
                 this.setState({
                     post: res.data
                 });
-                console.log(res.data);
+                // console.log(res.data);
 
             })  
     }
