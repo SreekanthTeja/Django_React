@@ -1,0 +1,8 @@
+Version-1.0
+* added Post models
+* added Serializers
+* created API View for the each serializers
+
+Version-2.0
+* added rest authentication and authorization
+* accounts app maintain all rest authentication services
