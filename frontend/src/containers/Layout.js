@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout ,Menu,Breadcrumb} from 'antd';
 import {Link} from 'react-router-dom';
 
-const { Header, Footer, Content } = Layout;
+const { Header, Content } = Layout;
 const CustomLayout = (props) =>{
     return(
         <Layout className="layout">
@@ -10,23 +10,9 @@ const CustomLayout = (props) =>{
 
                 <div className="logo" />
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-
-
-                {
-                    props.isAuthenticated?
-                    <Menu.Item key="2">
-                        Logout
-                    </Menu.Item>
-
-                    :
-                    <Menu.Item key="2">
-                        <Link to='/login'>Login</Link>
-                    </Menu.Item>
-                }
-                    <Menu.Item key="1">
-                        <Link to="/">Posts</Link>
-                    </Menu.Item>
-                    
+                    <Menu.Item key="1">nav 1</Menu.Item>
+                    <Menu.Item key="2">nav 2</Menu.Item>
+                    <Menu.Item key="3">nav 3</Menu.Item>
                 </Menu>
             </Header>
                 <Content style={{ padding: '0 50px' }}>
@@ -39,7 +25,6 @@ const CustomLayout = (props) =>{
                         {props.children}
                     </div>
                 </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
   
         

@@ -20,11 +20,11 @@ class PostListView(ListAPIView):
     #     print(requset.user.is_authenticated)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 class PostDetailView(RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 class PostCreateView(CreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
